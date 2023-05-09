@@ -46,12 +46,12 @@
                         <td>{{ Str::limit($news->body, 20) }}</td>
                         <td>
                             <div class="row">
-                            <div class="col-md-6">
-                                <a href="{{ route('admin.schedule.edit', ['id' => $news->id]) }}">編集</a>
-                            </div>
-                            <div class="col-md-6">
-                                <a href="{{ route('admin.schedule.delete', ['id' => $news->id]) }}">削除</a>
-                            </div>
+                                <div class="col-md-6">
+                                    <a href="{{ route('admin.schedule.edit', ['id' => $news->id]) }}">編集</a>
+                                </div>
+                                <div class="col-md-6">
+                                    <a href="{{ route('admin.schedule.delete', ['id' => $news->id]) }}">削除</a>
+                                </div>
                             </div>
                         </td>
                     </tr>

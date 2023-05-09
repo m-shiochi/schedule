@@ -11,7 +11,7 @@
             <div class="form-group row">
                 <div class="col-md-6">
                     <h3>{{ $news->name }}</h3>
-                    <p class="col-md-10">{{ $news->gender }}</p>
+                    <p>{{ $news->gender }}</p>
                 </div>
                 <div class="col-md-6">
                     <img src="{{ secure_asset('storage/image/' . $news->image_path) }}">
@@ -21,8 +21,13 @@
                 <label class="col-md-2">興味</label>
                 <p class="col-md-10">{{ $news->introduction }}</p>
             </div>
-            <div class="container">
+            <div class="row">
+                <div class="col-md-2">
                     <a href="{{ route('admin.profile.edit', ['id' => $news->id]) }}" role="button" class="btn btn-primary">編集</a>
+                </div>
+                <div class="col-md-2">
+                    <a href="{{ route('admin.profile.delete', ['id' => $news->id]) }}" role="button" class="btn btn-primary">削除</a>
+                </div>
             </div>
         @endif
     @endforeach

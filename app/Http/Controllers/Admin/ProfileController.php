@@ -91,4 +91,15 @@ class ProfileController extends Controller
         return redirect('admin/profile/');
        
     }
+    
+    public function delete(Request $request)
+    {
+        // 該当するNews Modelを取得
+        $news = profile::find($request->id);
+
+        // 削除する
+        $news->delete();
+
+        return redirect('admin/profile/');
+    }
 }
