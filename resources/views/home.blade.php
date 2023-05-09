@@ -12,10 +12,11 @@
             <table class="table table-hover">
                 <thead>
                     <tr>
-                        <th width="25%">予定日時</th>
+                        <th width="15%">予定日時</th>
                         <th width="15%">タイトル</th>
                         <th width="10%">予定場所</th>
-                        <th width="50%">詳細</th>
+                        <th width="40%">詳細</th>
+                        <th width="20%">写真</th>
                     </tr>
                 </thead>
                 <tbody class="table-striped">
@@ -26,6 +27,11 @@
                             <td>{{ Str::limit($news->title, 15) }}</td>
                             <td>{{ Str::limit($news->location, 10) }}</td>
                             <td>{{ Str::limit($news->body, 40) }}</td>
+                            @if($news->image_path != null)
+                                <td><img src="{{ secure_asset('storage/image/' . $news->image_path) }}"></td>
+                            @else
+                                <td>No image</td>
+                            @endif
                         </tr>
                         @endif
                     @endforeach
